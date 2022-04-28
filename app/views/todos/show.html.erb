@@ -1,13 +1,13 @@
-<h1><%= @todo.title %></h1>
+<h1 class="text-3xl font-bold mb-4"><%= @todo.title %></h1>
 
-<p><%= @todo.description %></p>
+<p><b>Description : </b><%= @todo.description %></p>
 
-<p><%= @todo.status %></p>
+<p><b>Status : </b><%= @todo.status %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_todo_path(@todo) %></li>
+<ul class="flex flex-row my-2">
+  <li><%= link_to "Edit", edit_todo_path(@todo), class: "p-2 mr-4 block w-min shadow-md bg-sky-600 text-white" %></li>
   <li><%= link_to 'Destroy', todo_path(@todo),
     method: :delete,
-    data: { confirm: 'Are you sure?' } %>
+    data: { confirm: 'Are you sure?' }, class: "p-2 block w-min shadow-md bg-red-600 text-white" %>
   </li>
 </ul>

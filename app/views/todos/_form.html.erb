@@ -1,21 +1,21 @@
 <%= form_with model: todo do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <div class="flex flex-col w-1/2">
+    <%= form.label :title, :class => 'font-bold' %>
+    <%= form.text_field :title, :class => 'w-full' %>
     <% todo.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+      <div class="text-red-600"><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %><br>
+  <div class="flex flex-col w-1/2">
+    <%= form.label :description, :class => 'font-bold' %>
+    <%= form.text_area :description, :class => 'w-full' %>
     <% todo.errors.full_messages_for(:description).each do |message| %>
-      <div><%= message %></div>
+      <div class="text-red-600"><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit nil, :class => 'p-2 mt-4 block w-min shadow-md bg-sky-600 text-white cursor-pointer' %>
   </div>
 <% end %>
