@@ -13,6 +13,7 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todo_params)
+    @todo.status = 'todo'
 
     if @todo.save
       redirect_to @todo
